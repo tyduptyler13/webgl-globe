@@ -172,8 +172,8 @@
         if (xhr.status === 200) {
           var data = JSON.parse(xhr.responseText);
           window.data = data;
-          for (var i in data) {
-            globe.addData(data[i], {format: 'magnitude', name: i, animated: false, color: colorFunc()});
+          for (var i = 0; i < dataSets.length; ++i) {
+            globe.addData(data[dataSets[i]], {format: 'magnitude', name: dataSets[i], animated: false, color: colorFunc()});
           }
           dataSetGeometries = globe.createPoints();
           globe.animate();
